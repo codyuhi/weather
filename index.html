@@ -3,12 +3,19 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>CoolWeather</title>
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Source+Serif+Pro:ital@1&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Martel:wght@900&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Martel:wght@600&display=swap" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <link rel="stylesheet" href="/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <title>Cody's Cool Weather</title>
+  <link rel="shortcut icon" href="/images/favicon.ico" type="image/x-icon" />
 </head>
 
-<body>
+<body onload="setActiveText()">
 
   <div id="pageContainer">
     <div id="page">
@@ -18,23 +25,25 @@
           <h1>Cody's Cool Weather <i class="fa fa-globe"></i></h1>
           <hr>
         </div>
-      </div>
-      <div id="searchContainer" class="section">
-        <div id="search">
-          <form>
-            <label>Enter a U.S. city</label>
-            <input id="weatherInput" type="text"></input><br/>
-            <input id="weatherSubmit" type="submit" value="Submit"></input>
-          </form>
-          <img src="/images/loading-indicator.gif" alt="Loading indicator" id="loadingIndicator" />
-          <div id="errorResults">
-            <p id="errorText"></p>
+        <div id="searchContainer" class="section">
+          <div id="search">
+            <form name="weatherForm">
+              <label id="formLabel">Enter a U.S. city</label><br /><br />
+              <input id="weatherInput" type="text" placeholder="City Name" name="weatherFormInput"></input><br /><br />
+              <input id="weatherSubmit" type="submit" value="Submit"></input>
+            </form>
+            <img src="/images/loading-indicator.gif" alt="Loading indicator" id="loadingIndicator" />
+            <div id="errorResults">
+              <p id="errorText"></p>
+            </div>
           </div>
         </div>
+
       </div>
       <div id="currentWeatherContainer" class="section">
         <div id="currentWeather">
-          <div id="weatherResults"></div>
+          <div id="weatherResults">
+          </div>
         </div>
       </div>
       <div id="forecastContainer" class="section">
@@ -42,10 +51,18 @@
           <div id="forecastResults"></div>
         </div>
       </div>
+      <div id="footerContainer" class="section">
+        <div id="footer">
+          <p><a href="https://github.com/BYU-CS-260-Winter-2021/lab-2-weather-app-codyuhi">Click Here</a> to view this
+            site's code on Github</p>
+          <p>&copy; Cody Uhi 2021</p>
+        </div>
+      </div>
     </div>
   </div>
 
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js" integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"
+    integrity="sha256-4iQZ6BVL4qNKlQ27TExEhBN1HFPvAvAMbFavKKosSWQ=" crossorigin="anonymous"></script>
   <script text="type/javascript" src="/script.js">
   </script>
 
